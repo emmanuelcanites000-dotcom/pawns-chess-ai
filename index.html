@@ -177,15 +177,15 @@
         const finalGameText = document.getElementById('finalGameText');
 
         // TUNOG MULA SA CHESS.COM
-        const moveAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3');
+        const moveAudio = new Audio('http://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3');
         const captureAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/capture.mp3');
-        const opponentMove = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-opponent.mp3');
-        const endAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-end.mp3');
+        const opponentAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-opponent.mp3');
+        const gameEndAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-end.mp3');
 
         moveAudio.preload = 'auto';
         captureAudio.preload = 'auto';
-        selectAudio.preload = 'auto';
-        winAudio.preload = 'auto';
+        opponentAudio.preload = 'auto';
+        gameEndAudio.preload = 'auto';
 
         // ✅ INAYOS NA PLAYSOUND FUNCTION
         function playSound(type){
@@ -199,12 +199,12 @@
                     captureAudio.play();
                 }
                 if(type === 'select') {
-                    selectAudio.currentTime = 0;
-                    selectAudio.play();
+                    opponentAudio.currentTime = 0;
+                    oppponuAudio.play();
                 }
                 if(type === 'win') {
-                    winAudio.currentTime = 0;
-                    winAudio.play();
+                    gameEndAudio.currentTime = 0;
+                    gameEndAudio.play();
                 }
             } catch(e) {
                 console.log('I-click muna ang screen:', e);
