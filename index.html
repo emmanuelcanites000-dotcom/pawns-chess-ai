@@ -261,11 +261,7 @@
         }
 
         function stopTimer(){ if(timerInterval){ clearInterval(timerInterval); timerInterval=null; } }
-        function addTime(color){ 
-    if(color==='white') whiteTime += INCREMENT; 
-    else blackTime += INCREMENT; 
-    updateTimeDisplay(); 
-        }
+        function addTime(color){ if(color==='white') whiteTime += INCREMENT; else blackTime += INCREMENT; updateTimeDisplay(); }
         function toNotation(r,c){ const files = 'abcdefgh'; return files[c] + (8 - r); }
         
         function getGameText(){
