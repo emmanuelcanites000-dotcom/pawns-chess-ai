@@ -179,8 +179,8 @@
         // TUNOG MULA SA CHESS.COM
         const moveAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move.mp3');
         const captureAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/capture.mp3');
-        const selectAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/select.mp3');
-        const winAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/notify.mp3');
+        const opponentAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/select.mp3');
+        const startAndEndAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/notify.mp3');
 
         moveAudio.preload = 'auto';
         captureAudio.preload = 'auto';
@@ -211,8 +211,8 @@
             }
         }
 
-        const START_TIME = 30;
-        const INCREMENT = 2;
+        const START_TIME = 180;
+        const INCREMENT = 10;
         const MAX_DEPTH = 6;
 
         let totalGamesPlayed = 1;
@@ -261,7 +261,11 @@
         }
 
         function stopTimer(){ if(timerInterval){ clearInterval(timerInterval); timerInterval=null; } }
-        function addTime(color){ if(color==='white') whiteTime += INCREMENT; else blackTime += INCREMENT; updateTimeDisplay(); }
+        function addTime(color){ 
+    if(color==='white') whiteTime += INCREMENT; 
+    else blackTime += INCREMENT; 
+    updateTimeDisplay(); 
+        }
         function toNotation(r,c){ const files = 'abcdefgh'; return files[c] + (8 - r); }
         
         function getGameText(){
