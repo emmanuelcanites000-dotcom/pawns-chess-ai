@@ -177,13 +177,12 @@
         const finalGameText = document.getElementById('finalGameText');
 
         // TUNOG MULA SA CHESS.COM
-        const gameStartAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-start.mp3');
         const moveAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3');
         const captureAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/capture.mp3');
         const opponentAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-opponent.mp3');
         const gameEndAudio = new Audio('https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-end.mp3');
 
-        gameStartAudio = 'auto';
+        
         moveAudio.preload = 'auto';
         captureAudio.preload = 'auto';
         opponentAudio.preload = 'auto';
@@ -192,11 +191,8 @@
         // ✅ INAYOS NA PLAYSOUND FUNCTION
         function playSound(type){  
             try {   
-                if(type === 'move') {
-                    gameStartAudio.currentTime = 0;
-                    gameStartAudio.play();
-            
-               } if(type === 'move') {
+                 
+            } if(type === 'move') {
                     moveAudio.currentTime = 0;
                     moveAudio.play();
                 }
